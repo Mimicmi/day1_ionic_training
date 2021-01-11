@@ -1,20 +1,86 @@
+<!--ion-toolbar permet de faire l'ombre portée avec une barre-->
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Page Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
+<!--ion-content sépare avec le ion-header,
+l'avantage sur ion-content est qu'il est scrollable-->
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <!--le a href n'est pas recommande pour une
+    application mobile-->
+    <p>
+      <a routerLink="/details">Voir la page details</a>
+    </p>
+    <p>
+      <ion-button routerLink="/details">Bouton voir page details</ion-button>
+    </p>
+    <p>
+      <ion-button expand="block" (click)="openDetails()">
+        Accéder à la page détail programmatiquement
+      </ion-button>
+    </p>
+
+    <br>
+
+    <strong>Ok pour créer une app</strong>
+
+    <ion-text color="primary">
+      <h1>Mon titre de niveau 1 primary</h1>
+
+      <!--interpolation de la propriété titre de
+      home.page.ts -->
+      <h1>{{ titre }}</h1>
+    </ion-text>
+    <ion-text color="secondary">
+      <h2>Mon titre de niveau 2 secondary</h2>
+    </ion-text>
+    <ion-text color="light">
+      <h2>Mon titre de niveau 3 light</h2>
+    </ion-text>
+    <ion-text color="danger">
+      <h4>Mon titre de niveau 4 danger</h4>
+    </ion-text>
+    <ion-text color="dark">
+      <h4>Mon titre de niveau 5 dark</h4>
+    </ion-text>
+
+      <p>Lorem ipsum <ion-text color="danger">olor sit amet,</ion-text>d consectetur adipisicing elit. Adipisci assumenda consequatur distinctio doloremque ipsa maiores quaerat. Aliquid, blanditiis deserunt doloremque ea enim est et incidunt molestiae optio, repellendus voluptatibus voluptatum?</p>
+
+    <br>
+
+    <!--les boutons auront un texte toujours en majuscule-->
+    <ion-button color="dark">JE SUIS UN BOUTON</ion-button>
+    <br>
+    <ion-button target="_blank" href="https://google.fr">Lien Google</ion-button>
+    <ion-button color="danger">bouton rouge</ion-button>
+    <ion-button color="secondary" expand="round">bouton arrondi</ion-button>
+    <ion-button color="dark" expand="full">bouton full</ion-button>
+    <ion-button color="danger" expand="clear">bouton clear</ion-button>
+    <ion-button color="danger" fill="solid">bouton fill solid</ion-button>
+    <ion-button color="danger" size="large">bouton large</ion-button>
+    <ion-button color="danger" fill="outline">bouton outline</ion-button>
+
+    <br>
+    <!--le paranthèses sur le click servent à rattacher
+    la partie logique de l'événement typescript-->
+    <ion-button color="danger" (click)="showAlert('coucou')">bouton alerte</ion-button>
+    <br>
+
+    <p><ion-button color="primary" size="small">
+      <ion-icon slot="start" name="home"></ion-icon>
+      Bouton icone home
+    </ion-button></p>
+    <p><ion-button color="primary" size="small">
+      <ion-icon slot="end" name="alarm"></ion-icon>
+      Bouton icone alarme end
+    </ion-button></p>
+
   </div>
 </ion-content>
