@@ -1,5 +1,8 @@
 {
   "name": "day1_myFirstApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }

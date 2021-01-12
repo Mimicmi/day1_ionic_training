@@ -30,12 +30,25 @@ export class DetailsPage implements OnInit {
     return "Ceci est mon sous-titre depuis une méthode";
   }
 
+  async getStorage() {
+
+    /*on attend d'avoir les données pour charger le
+    * contenu dans data*/
+    const data = await this.storage.get('monTableau');
+
+    console.log('Données récupérées du Storage', data);
+    if (data) this.monTableau = data;
+
+
+    /*    this.storage.get('monTableau').then((data) => {
+      console.log('Données récupérées du Storage', data);
+      if (data) this.monTableau = data;
+      }
+    )*/
+  }
+
   ngOnInit() {
-    this.storage.get('monTableau').then((data) => {
-      console.log('Données récupérées du Storage', data)
-      this.monTableau = data;
-    }
-  )
+    this.getStorage();
   }
 
 }
